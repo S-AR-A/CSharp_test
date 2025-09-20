@@ -1,25 +1,19 @@
-﻿// get num 
-//if read is not null continue
-//else covert to int
-do
+﻿//get the string
+while (true)
 {
-    Console.WriteLine("gimme the int: ");
-    string num_str = Console.ReadLine();
-    if (num_str.Length == 0)
+    int s_ts()
     {
-        Console.WriteLine("no number received");
-        continue;
-    }
-    else
-    {
-        int num_int = int.Parse(num_str);
-        //convet to binary
-        string num_bin = Convert.ToString(num_int, 2);
-        // count 1s and 0s
-        int zeros = num_bin.Count(c => c == '0');
-        int ones = num_bin.Count(c => c == '1');
-        //write the results      
-        Console.Write($"it has {zeros} zeros and {ones} ones\n");
+        var input = Console.ReadLine();
+        string[] nums = input.Split(',');
+
+        var a = int.Parse(nums[0].Trim());
+        var b = int.Parse(nums[1].Trim());
+
+        //if  not  the same compute sum
+        if (a == b) return 3 * (a + b);
+        //else triple sum
+        else return a + b;
     }
 
-} while (true);
+    Console.WriteLine($"this is your anwser: {s_ts()}");
+}
