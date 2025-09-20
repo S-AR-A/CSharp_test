@@ -1,19 +1,13 @@
 ﻿//get the string
-while (true)
-{
-    int s_ts()
-    {
-        var input = Console.ReadLine();
-        string[] nums = input.Split(',');
+using System.Data;
 
-        var a = int.Parse(nums[0].Trim());
-        var b = int.Parse(nums[1].Trim());
+var input = Console.ReadLine();
+//split to str and index
+string[] parts = input.Split(',');
 
-        //if  not  the same compute sum
-        if (a == b) return 3 * (a + b);
-        //else triple sum
-        else return a + b;
-    }
+var index = int.Parse(parts[1].Trim());
 
-    Console.WriteLine($"this is your anwser: {s_ts()}");
-}
+//remove the character 
+var result = parts[0].Trim().Remove(index, 1);
+//write result
+Console.WriteLine(result);
