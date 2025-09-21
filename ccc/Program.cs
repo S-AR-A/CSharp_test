@@ -1,13 +1,22 @@
-﻿//get the string
-using System.Data;
+﻿
+    void exc(int a)
+    {
+        if (a < 0)
+            throw new Exception("jlskdjfljalf;dd");
+    }
+do
+{
+    Console.WriteLine("What is it?");
+    var num = int.Parse(Console.ReadLine());
+    try
+    {
+        exc(num);
+    }
+    catch(Exception e)
+    {
+        Console.WriteLine($"{e.Message}");
+    }
+} while (true);
 
-var input = Console.ReadLine();
-//split to str and index
-string[] parts = input.Split(',');
 
-var index = int.Parse(parts[1].Trim());
 
-//remove the character 
-var result = parts[0].Trim().Remove(index, 1);
-//write result
-Console.WriteLine(result);
